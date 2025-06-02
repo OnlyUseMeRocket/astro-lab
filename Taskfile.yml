@@ -1,0 +1,42 @@
+version: '3'
+
+tasks:
+  default:
+    silent: true
+    cmds:
+      - task --list-all --sort=none
+
+  rustlings:check:
+    dir: rustlings/
+    cmds:
+      - cargo check
+    env:
+      RUSTFLAGS: "-D warnings"
+
+  rustlings:format:
+    dir: rustlings
+    cmds:
+      - cargo fmt --all -v
+
+  hello-cargo:check:
+    dir: hello-cargo
+    cmds:
+      - cargo check
+    env:
+      RUSTFLAGS: "-D warnings"
+
+  hello-cargo:format:
+    dir: hello-cargo
+    cmds:
+      - cargo fmt --all -v
+
+  hello-cargo:lint:
+    dir: hello-cargo
+    cmds:
+      - cargo clippy
+    env:
+      RUSTFLAGS: "-D warnings"
+
+  
+
+
